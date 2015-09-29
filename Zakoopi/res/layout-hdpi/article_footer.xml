@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rel_add_comment"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/add_comment"
+        android:padding="8dp" >
+
+        <EditText
+            android:id="@+id/edt_comment"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:editable="true"
+            android:focusable="true"
+            android:gravity="top"
+            android:hint="Add a comment...."
+            android:textColor="#acacac"
+            android:textColorHint="#AFAFAF"
+            android:textSize="11.33dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/rel_add_comment"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/green_store_tag"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/txt_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="#FFFFFF"
+            android:textSize="11.33dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/rel_submit"
+        android:background="@android:color/transparent" />
+
+    <!--
+        similar lookbook
+        4d4d49
+        semibold
+        16.66dp
+    -->
+
+</RelativeLayout>

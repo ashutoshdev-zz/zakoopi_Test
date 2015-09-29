@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:staggered="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent" >
+
+
+    <com.zakoopi.helper.ExpandableHeightListView
+        android:id="@+id/PhoneImageGrid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:divider="@android:color/transparent"/>
+    
+     <com.zakoopi.helper.MaterialProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:progress_stoke_width="2dp"
+        android:visibility="gone"/>
+     
+     <TextView 
+         android:id="@+id/txt_nodata"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="No Lookbooks"
+         android:textSize="15sp"
+         android:textColor="#000000"
+         android:layout_gravity="center"
+         android:visibility="gone"/>
+
+</FrameLayout> 
+
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+     <com.zakoopi.endlist.EndlessListView
+        android:id="@+id/endlessListView_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:scrollingCache="false"
+        android:choiceMode="singleChoice"
+        android:drawSelectorOnTop="true"
+        android:visibility="visible" />
+
+</LinearLayout> -->
+
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+    
+     <View 
+        android:id="@+id/vie_break"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#d2d2d2"
+        android:layout_marginTop="5dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rel_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/vie_break" >
+
+        <RelativeLayout
+            android:id="@+id/rel_user"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" >
+
+            <com.zakoopi.helper.CircleImageView
+                android:id="@+id/img_user_profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/img_user_profile"
+                android:text="Zakoopi User"
+                android:textColor="#4d4d49"
+                android:textSize="13dp" />
+            <!-- typeface bold -->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_user"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/txt_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don&apos;t u have any other news to show....here for you guys virat kohli"
+                android:textColor="#898989"
+                android:textSize="13dp" />
+            <!-- typeface regular -->
+        </RelativeLayout>
+    </RelativeLayout>
+    
+    <View 
+        android:id="@+id/vie_break1"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/rel_main"
+        />
+
+</RelativeLayout>

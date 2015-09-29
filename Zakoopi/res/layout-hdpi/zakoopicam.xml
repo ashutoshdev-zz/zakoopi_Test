@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#131313" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#000000" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="6.33dp"
+                android:layout_height="12.67dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/home_back" />
+
+            <TextView
+                android:id="@+id/txt_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:text="Upload Image"
+                android:textColor="#FFFFFF"
+                android:layout_toRightOf="@+id/imageView1"
+                android:textSize="14.67dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.image.effects.ZakoopiCamRenderer
+        android:id="@+id/instacam_renderer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@id/header" />
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/upload_camera_button" />
+
+    <ImageView
+        android:id="@+id/button_rotate"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/upload_rev_camera" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button_rotate"
+        android:layout_marginRight="20dp" />
+
+</RelativeLayout>

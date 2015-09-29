@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zakoopi"
+    android:installLocation="auto"
+    android:versionCode="39"
+    android:versionName="1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <permission
+        android:name="com.zakoopi.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.zakoopi.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.zakoopi.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <!-- <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" /> -->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="com.zakoopi.utils.UILApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/zakoopi"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.SplashScreen"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- use app launch set -->
+
+			
+
+            <!-- <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                Accepts URIs that begin with "recipe-app://recipes"
+                <data
+                    android:host="zakoopi.com"
+                    android:scheme="zakoopi" />
+                <data
+                    android:host="www.zakoopi.com"
+                    android:scheme="zakoopi" />
+            </intent-filter> -->
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://recipe-app.com/recipes" -->
+                
+                <data
+                    android:pathPrefix=""
+                    android:host="www.zakoopi.com"
+                    android:scheme="zakoopi" />
+                <data
+                    android:pathPrefix=""
+                    android:host="www.zakoopi.com"
+                    android:scheme="http" />
+                <data
+                    android:pathPrefix=""
+                    android:host="zakoopi.com"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+        </activity>
+        <activity
+            android:name=".activity.AboutUs"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.EditProfilePage"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.UserFollowPage"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.UserNotificationPage"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.UserStoreAndExperiences"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.LookbookView1"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+        </activity>
+        <activity
+            android:name=".activity.SearchStoreActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ProfileDrafts"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ProflieLookbooks"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ProfileReviews"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.FullReview"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.OtherUserProfile"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SocialActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mycam.ImageEffects"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mycam.ImageDetail"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.mycam.Lookbookpublish"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.mycam.LookBookTabsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mystores.ReviewMe"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.mystores.ImageGallery"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mystores.ZoomImages"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.mystores.StoreActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.zakoopi.activity.ArticleView"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.zakoopi.activity.ZakoopiPoints"
+            android:screenOrientation="portrait" >
+        </activity>
+
+       <!--  <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider495011450611237"
+            android:exported="true" />  -->
+            
+            <!--  <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider835732169845643"
+            android:exported="true" />  -->
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC36G6rcsnLxDXOMddWCykULxALReBZeE0" />
+        <meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/global_tracker" />
+        
+         <receiver
+            android:name="com.zakoopi.gcm.MSGReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.zakoopi" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.zakoopi.gcm.MSGService" />
+
+        
+         <service android:name="com.google.analytics.tracking.android.CampaignTrackingService" />
+
+        <receiver
+            android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.zakoopi.activity.CustomReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        
+        
+        <!--
+          Optionally, register AnalyticsReceiver and AnalyticsService to support background
+          dispatching on non-Google Play devices
+        -->
+        <!--
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+            </intent-filter>
+        </receiver>
+ 
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+        -->
+
+
+        <!--
+             Optionally, register CampaignTrackingReceiver and CampaignTrackingService to enable
+             installation campaign reporting
+        -->
+        <!--
+        <receiver
+            android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+ 
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
+        -->
+
+    </application>
+
+</manifest>

@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:feedpage="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.zakoopi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff" >
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="10.67dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/transparent" />
+
+    <com.zakoopi.helper.ExpandableHeightGridView
+        android:id="@+id/grid_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="10.67dp"
+        android:layout_toRightOf="@+id/v1"
+        android:background="#fff"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" >
+    </com.zakoopi.helper.ExpandableHeightGridView>
+
+    <View
+        android:id="@+id/viw"
+        android:layout_width="10.67dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent" />
+
+</RelativeLayout>

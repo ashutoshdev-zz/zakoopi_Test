@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rel_lookbook_main"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/img_lookbook"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#EDEDED" 
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/txt_has_tag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_lookbook"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="#pink #shoelove #bag #summer"
+            android:textColor="#898989"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_has_tag"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Stores Tagged:"
+            android:textColor="#4d4d49"
+            android:textSize="15dp" />
+
+        <com.zakoopi.helper.FlowLayout
+            android:id="@+id/flow_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_store"
+            android:layout_marginTop="2dp"
+            android:layout_alignLeft="@+id/txt_store"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/flow_layout"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+
+</RelativeLayout>

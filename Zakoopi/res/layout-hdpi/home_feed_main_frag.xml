@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:feedpage="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+  <!--  <include
+            android:id="@+id/previewLayout"
+            layout="@layout/hide_show_lin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />  -->
+
+  <LinearLayout
+        android:id="@+id/lin_popular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/viw"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_recent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/viw"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </LinearLayout>
+
+</RelativeLayout>

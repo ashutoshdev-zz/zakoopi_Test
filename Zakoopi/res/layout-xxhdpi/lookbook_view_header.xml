@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+<RelativeLayout
+            android:id="@+id/rel_user"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#26B3AD" >
+
+            <com.zakoopi.helper.CircleImageView
+                android:id="@+id/img_user_profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/profile_img_3" />
+
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/img_user_profile"
+                android:text="Zakoopi User"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_lookbook_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_user"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="15 stores you cannot miss in Shapur Jaat (Summerwear shopping)"
+                android:textColor="#000"
+                android:textSize="18.33dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_view_like_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_lookbook_title"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp" >
+
+            <RelativeLayout
+                android:id="@+id/rel_view"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/img_view"
+                    android:layout_width="29.33dp"
+                    android:layout_height="23.33dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/home_view_icon" />
+
+                <TextView
+                    android:id="@+id/txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:text="Comments"
+                    android:textColor="#898989" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_like"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/rel_view" 
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_like"
+                    android:layout_width="28.66dp"
+                    android:layout_height="25.33dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/notif_like" />
+
+                <TextView
+                    android:id="@+id/txt_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_like"
+                    android:layout_marginTop="3dp"
+                    android:text="113 Comments"
+                    android:textColor="#898989" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_comment"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/rel_like" >
+
+                <ImageView
+                    android:id="@+id/img_comment"
+                    android:layout_width="27.66dp"
+                    android:layout_height="23.66dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/notif_comment" />
+
+                <TextView
+                    android:id="@+id/txt_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_comment"
+                    android:layout_marginTop="3dp"
+                    android:text="113 Comments"
+                    android:textColor="#898989" />
+            </RelativeLayout>
+        </RelativeLayout>
+        
+        <View 
+            android:id="@+id/v1"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_below="@+id/rel_view_like_comment"
+            android:background="@android:color/transparent"/>
+</RelativeLayout>

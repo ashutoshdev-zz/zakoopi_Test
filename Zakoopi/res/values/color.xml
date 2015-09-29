@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="feed_transparent">#fffff0</color>
+    <color name="txt_select">#4F4F4D</color>
+    <color name="txt_unselect">#868686</color>
+    <color name="view_select">#2BB7B8</color>
+    <color name="view_unselect">#D9D9D9</color>
+    <color name="divider">#D2D2D2</color>
+    <color name="emerald">#2ecc71</color>
+    <color name="wisteria">#8e44ad</color>
+    <color name="clouds">#ecf0f1</color>
+    <color name="midnight_blue">#141d26</color>
+    <color name="primary">#3f51b5</color>
+    <color name="primary_dark">#303f9f</color>
+    <color name="ripple">#F06292</color>
+    <color name="accent">#27B3AD</color>
+    <color name="accent_pressed">#48cccd</color>
+    <color name="seaction_header">#D2D2D2</color>
+    <color name="ColorPrimary">#131313</color>
+    <color name="ColorPrimaryDark">#131313</color>
+    <color name="tabsScrollColor">#92e9ff</color>
+    <color name="tabscolor">#ffffff</color>
+    <color name="green_user_name">#27B3AD</color>
+    <color name="red">#d40000</color>
+    <color name="green">#009900</color>
+    <color name="blue">#000099</color>
+    <color name="orange">#FF9900</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green_draw">#26B3AD</color>
+
+    <item name="brown" type="color">#939393</item>
+    <item name="purple" type="color">#dadada</item>
+    <item name="maroon" type="color">#ccd3d7</item>
+    <item name="olive" type="color">#c6baa2</item>
+    
+    <!-- <item name="silver" type="color">#C0C0C0</item>
+    <item name="iridium" type="color">#3D3C3A</item>
+    <item name="blue1" type="color">#9AFEFF</item>
+    <item name="green1" type="color">#4E8975</item>
+    <item name="bgreen" type="color">#8A764E</item>-->
+    <item name="gray" type="color">#808080</item> 
+
+</resources>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000" >
+
+        <RelativeLayout
+            android:id="@+id/rel_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="6.33dp"
+                android:layout_height="12.67dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/home_back" />
+
+            <TextView
+                android:id="@+id/txt_image_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/img_back"
+                android:text="Lookbook Title"
+                android:textColor="#FFFFFF"
+                android:textSize="16.67dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/imageView1"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/publish_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel3"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/rel1" >
+
+        <RelativeLayout
+            android:id="@+id/rel_tit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txt_lookbook_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Lookbook title"
+                android:textColor="#4d4d49"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/edt_title"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_alignLeft="@+id/txt_lookbook_title"
+                android:layout_below="@+id/txt_lookbook_title"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/storename_box"
+                android:ems="10"
+                android:hint="Give a title to your lookbook - 20 to 120 characters"
+                android:maxLength="120"
+                android:padding="5dp"
+                android:textColor="#8C8C8C"
+                android:textSize="12dp" >
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_rate_error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_tit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/txt_rate_your"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate your store"
+                android:visibility="gone"
+                android:textColor="#4d4d49"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/txt_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/txt_rate_your"
+                android:text="Please rate all stores !"
+                android:textColor="#E15241"
+                android:textSize="15dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rel_rate_error"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <LinearLayout
+                android:id="@+id/additem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/meeee"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="3dp"
+        android:background="#131313" >
+
+        
+        <com.image.effects.HorizontalListView
+            android:id="@+id/listview"
+            style="@style/TwoWayView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+             android:layout_below="@+id/txt_photostream"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center">
+        </com.image.effects.HorizontalListView>
+       
+
+        <TextView
+            android:id="@+id/txt_photostream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="4dp"
+            android:text="Photostream"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/meeee"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_upload_on" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_filter_on" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_tag_on" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_title_on" />
+    </LinearLayout>
+
+</RelativeLayout>

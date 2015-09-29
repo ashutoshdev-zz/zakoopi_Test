@@ -1,0 +1,228 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeae6"
+    android:orientation="vertical"
+    android:weightSum="4" >
+    
+    <RelativeLayout 
+        android:id="@+id/rel_catalouge"
+        android:layout_width="fill_parent"
+        android:layout_height="58.00dp">
+
+<TextView
+    android:id="@+id/txt_catalogue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:gravity="center"
+    android:text="Catalogue:"
+    android:layout_marginLeft="10.67dp"
+    android:textColor="#4d4d49"
+    android:textSize="15dp" />
+
+   <!--  <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="58.00dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/txt_catalogue"
+        android:orientation="horizontal" > -->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12.33dp"
+            android:layout_toRightOf="@+id/txt_catalogue"
+            android:src="@drawable/general_women_active"
+            android:visibility="visible" />
+
+   <!--  </LinearLayout> -->
+
+ <ImageView
+     android:id="@+id/imageView3"
+     android:layout_width="75dp"
+     android:layout_height="25dp"
+     android:layout_centerVertical="true"
+     android:layout_marginLeft="12.33dp"
+     
+     android:layout_toRightOf="@+id/imageView2"
+     android:src="@drawable/general_men_inactive" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12.33dp"
+            android:layout_toRightOf="@+id/imageView3"
+            android:src="@drawable/general_kids_inactive"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.tabbar.cam.NestedListView
+        android:id="@+id/benchmarksList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10.67dp"
+        android:layout_marginRight="10.67dp"
+        android:layout_weight="1"
+        android:background="@drawable/frame"
+        android:cacheColorHint="#00000000"
+        android:focusable="false" >
+    </com.tabbar.cam.NestedListView>
+
+    <RelativeLayout
+        android:id="@+id/rel_store_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.67dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/txt_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10.67dp"
+            android:text="Photos:"
+            android:textColor="#4d4d49"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/photos"
+            android:layout_width="fill_parent"
+            android:layout_height="82dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txt_photos"
+            android:layout_marginLeft="10.67dp"
+            android:layout_marginRight="10.67dp"
+            android:layout_marginTop="10.67dp"
+            android:orientation="horizontal"
+            android:weightSum="5" >
+  
+            <ImageView
+                android:id="@+id/img_store_1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/frame"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/img_store_2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/frame"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/img_store_3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/frame"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/img_store_4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/frame"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rel_img_count"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/general_catalogue_photo_count_box"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/txt_photo_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="+10"
+                    android:textColor="#4d4d49"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_map"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rel_txt_map"
+            android:layout_width="fill_parent"
+            android:layout_height="30.67dp" >
+
+            <TextView
+                android:id="@+id/txt_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10.67dp"
+                android:text="Map:"
+                android:gravity="center"
+                android:textColor="#4d4d49"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:id="@+id/map1">
+            
+             <fragment
+            android:id="@+id/location_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.SupportMapFragment" />
+
+        
+
+        <ImageView
+            android:id="@+id/google_maps_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/google_maps_img" />
+<View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/location_map"
+            android:layout_height="20dp" />
+        </RelativeLayout>
+
+       
+    </LinearLayout>
+
+</LinearLayout>

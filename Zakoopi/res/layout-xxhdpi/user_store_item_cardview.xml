@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.zakoopi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/rel_store_card"
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/feed_white_drawable"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/rel_main"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <RelativeLayout
+                    android:id="@+id/rel_store_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" >
+
+                    <RelativeLayout
+                        android:id="@+id/rel_store_name_location"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/txt_store_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ushnak Mal Mool Chand"
+                            android:singleLine="true"
+                            android:textColor="#4d4d49"
+                            android:ellipsize="end"
+                            android:textSize="16.67dp" />
+                        <!-- Typeface bold -->
+
+                        <TextView
+                            android:id="@+id/store_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_store_name"
+                            android:text="Saket, New delhi"
+                            android:textColor="#898989"
+                            android:textSize="13.33dp" />
+                        <!-- Typeface regular -->
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel_store_rate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                       
+                        android:layout_below="@+id/rel_store_name_location"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:id="@+id/lin2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
+                             android:layout_alignParentBottom="true" >
+
+                            <RelativeLayout
+                                android:id="@+id/rel_lookbook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:visibility="visible" >
+
+                                <ImageView
+                                    android:id="@+id/img_lookbook"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/results_lookbook_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_lookbook_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/img_lookbook"
+                                    android:text="12"
+                                    android:gravity="center"
+                                    android:textColor="#898989"
+                                    android:textSize="13.33dp" />
+
+                                <!-- regular -->
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_review"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center_vertical"
+                                android:visibility="visible" >
+
+                                <ImageView
+                                    android:id="@+id/img_review"
+                                    android:layout_width="14.33dp"
+                                    android:layout_height="12.67dp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/results_review_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_review_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/img_review"
+                                    android:text="12"
+                                    android:textColor="#898989"
+                                    android:textSize="13.33dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rel_photo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:gravity="center_vertical" >
+
+                                <ImageView
+                                    android:id="@+id/img_photo"
+                                    android:layout_width="15.67dp"
+                                    android:layout_height="12.67dp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/results_photos_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_photo_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/img_photo"
+                                    android:text="123"
+                                    android:textSize="13.33dp"
+                                    android:textColor="#898989" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_store_rate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5" 
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rel_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <RelativeLayout
+                            android:id="@+id/rel_rated_box1"
+                            android:layout_width="30.67dp"
+                            android:layout_height="22.67dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/home_rating_box" >
+
+                            <TextView
+                                android:id="@+id/txt_rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="4.5"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13.33dp"/>
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/img_follow"
+                            android:layout_width="79.33dp"
+                            android:layout_height="22.67dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="8dp"
+                            android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        </RelativeLayout>
+
+</LinearLayout>

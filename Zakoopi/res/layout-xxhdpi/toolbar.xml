@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="#000000"
+    android:elevation="2dp">
+    
+     <!-- <ImageView 
+        android:id="@+id/back_img"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/zakoopiicon"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        />  -->
+     
+      <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:textColor="#FFFFFF" />  
+        
+      <ImageView 
+         android:id="@+id/img_menu"
+         android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/home_menuicon"/> 
+        
+      <RelativeLayout
+          android:id="@+id/rel_loc"
+          android:layout_width="93dp"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/img_menu" >
+
+          <ImageView 
+          android:id="@+id/img_down"
+          android:layout_width="10dp"
+          android:layout_height="10dp"
+          android:layout_centerVertical="true"
+          android:background="@drawable/down_arrow"
+          android:layout_alignParentRight="true"/>
+      <TextView 
+          android:id="@+id/txt_city_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_toLeftOf="@+id/img_down"
+          android:text="New Delhi"
+          android:textColor="#FFF"
+          android:layout_marginRight="5dp"
+          android:textSize="15dp"/>
+      
+      
+      </RelativeLayout>
+ 
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Zakoopi</string> 
+     <!--   <string name="base_url">http://v3dev.zakoopi.com/api/</string>  -->
+     <string name="base_url">http://www.zakoopi.com/api/</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="stor_exp">Store &amp; Experiences</string> 
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="spinner_hint">All Products</string>
+    <string name="app_id">495011450611237</string> 
+    <!-- <string name="app_id">835732169845643</string> -->
+    
+     <string name="profile">Profile has been updated.</string>
+    <string name="profile_pic">Your profile pic removed successfully.</string>
+
+     <string name="title1">Follow your favourite stores, keep yourself posted about latest catalogue and collections</string>
+    <string name="title2">Browse through lookbooks and articles, get to know the latest in fashion</string>
+    <string name="title3">Search for stores and marketplaces in and around your area</string>
+    <string name="title4">Get to know about the best deals in your favourite store, in your favourite marketplace</string>
+    
+     <!-- Common strings -->
+ 
+    <string name="title">ZakoopiCam</string>
+    <string name="saving">Saving picture..</string>
+    <string name="focus_failed">Auto focusing failed.</string>
+    
+     <string name="message">Yaay! Your lookbook has been successfully uploaded. It shall be published soon after review.</string>
+     
+
+    <!-- Button texts -->
+    <string name="button_exit">Exit</string>
+    <string name="button_shoot">Shoot</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_save">Save</string>
+
+    <!-- Menu strings -->
+    <string name="spinner_filter">Select Filter</string>
+    <string name="seekbar_brightness">Adjust Brightness (%+d)</string>
+    <string name="seekbar_contrast">Adjust Contrast (%+d)</string>
+    <string name="seekbar_saturation">Adjust Saturation (%+d)</string>
+    <string name="seekbar_corner_radius">Adjust Corner Radius (%+d)</string>
+
+    <!-- Preference keys -->
+    <string name="key_filter">key_filter</string>
+    <string name="key_brightness">key_brightness</string>
+    <string name="key_contrast">key_contrast</string>
+    <string name="key_saturation">key_saturation</string>
+    <string name="key_corner_radius">key_corner_radius</string>
+
+    <!-- Filter names -->
+    <string-array name="filters">
+        <item>None</item>
+        <item>Black &amp; White</item>
+        <item>Ansel</item>
+        <item>Sepia</item>
+        <item>Retro</item>
+        <item>Georgia</item>
+        <item>Sahara</item>
+        <item>Polaroid</item>
+        <item>Cartoon</item>
+        <item>Edges</item>
+    </string-array>
+</resources>

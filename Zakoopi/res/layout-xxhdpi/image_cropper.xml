@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7" >
+
+    <include
+        android:id="@+id/main_tool"
+        android:layout_width="fill_parent"
+        android:layout_height="46.33dp"
+        android:layout_alignParentTop="true"
+        layout="@layout/topbar" />
+
+    <com.theartofdev.edmodo.cropper.CropImageView
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/CropImageView"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/main_tool"
+        android:layout_marginTop="15dp"
+        android:layout_height="280dp" />
+
+    <!--
+    <LinearLayout
+        android:id="@+id/butt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Rotate" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Crop" />
+
+    </LinearLayout>
+    -->
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff" >
+
+        <RelativeLayout
+            android:id="@+id/rel_con"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#27B3AD" >
+
+            <TextView
+                android:id="@+id/txt_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="Choose Option"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/rel_con" >
+
+            <TextView
+                android:id="@+id/txt_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#FFFFFF"
+                android:text="Rotate"
+                android:textColor="#26B3AD"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/vi"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/rel_btn_1"
+            android:background="#e7e7e7" />
+
+        <RelativeLayout
+            android:id="@+id/rel_btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/vi" >
+
+            <TextView
+                android:id="@+id/txt_crop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#FFFFFF"
+                android:text="Crop"
+                android:textColor="#26B3AD"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

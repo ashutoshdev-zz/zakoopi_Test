@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/rel_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21.00dp"
+        android:layout_marginLeft="10.00dp"
+        android:layout_marginRight="10.00dp">
+        
+        <RelativeLayout 
+            android:id="@+id/rel_store"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/feed_white_drawable">
+            
+            <RelativeLayout 
+                android:id="@+id/rel_store_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.67dp"
+                android:layout_marginRight="12.00dp"
+                android:layout_marginTop="11.33dp"
+                android:layout_marginBottom="8dp">
+                
+                <RelativeLayout 
+                   android:id="@+id/rel_name_address"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerVertical="true">
+                    
+                    <TextView 
+                        android:id="@+id/txt_store_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zara Store"
+                        android:textColor="#4d4d49"
+                        android:textSize="13dp"/>
+                    
+                    <TextView 
+                        android:id="@+id/txt_store_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saket, New Delhi"
+                        android:textColor="#d2d2d2"
+                        android:textSize="11dp"
+                        android:layout_below="@+id/txt_store_name"/>
+                </RelativeLayout>
+                
+                <ImageView
+                    android:id="@+id/img_follow"
+                    android:layout_width="87.67dp"
+                    android:layout_height="21.00dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/experience_follow_button" />
+
+            </RelativeLayout>
+            
+            <View 
+                android:id="@+id/view"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d2d2d2"
+                android:layout_below="@+id/rel_store_details"/>
+            
+            <RelativeLayout 
+                android:id="@+id/rel_store_tag_line"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_marginTop="20.67dp"
+                android:layout_marginBottom="18.33dp"
+                android:layout_marginLeft="10.67dp"
+                android:layout_marginRight="10.67dp">
+                
+                <TextView 
+                    android:id="@+id/txt_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:text="Check out their collection of long tops and skirts. They will not disappoint you at all...."
+                    android:textColor="#000000"
+                    android:textSize="13dp"/>
+            </RelativeLayout>
+            <View 
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/rel_store_tag_line"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    
+
+</LinearLayout>

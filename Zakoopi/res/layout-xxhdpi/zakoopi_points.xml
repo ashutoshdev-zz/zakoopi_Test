@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+            android:id="@+id/main_tool"
+            android:layout_width="match_parent"
+            android:layout_height="46.33dp"
+            android:layout_alignParentTop="true"
+            layout="@layout/topbar" />
+
+ <ScrollView 
+    android:id="@+id/scro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/main_tool" >
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" > 
+
+        
+
+         <RelativeLayout
+            android:id="@+id/rel_main"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_tool"
+           android:layout_marginLeft="17.67dp"
+                android:layout_marginRight="17.67dp" > 
+
+            <TextView
+                android:id="@+id/txt_zak_earning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                
+                android:layout_marginTop="10.00dp"
+                android:gravity="center"
+                android:text="Earning Zakoopi points is simple! \nHere’s the math behind it:"
+                android:textColor="#4D4D49"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/rel_point_main"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_zak_earning"
+                android:layout_marginTop="20.67dp" >
+
+                <!-- Relative Layout Lookbook Add Point -->
+
+                <RelativeLayout
+                    android:id="@+id/rel_lookbook_add"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/lin_add"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <RelativeLayout
+                            android:id="@+id/rel_add"
+                            android:layout_width="79.33dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5" >
+
+                            <ImageView
+                                android:id="@+id/img_lookbook"
+                                android:layout_width="28.67dp"
+                                android:layout_height="28.67dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/lookbook_addition" />
+
+                            <TextView
+                                android:id="@+id/txt_lookbook_add"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/img_lookbook"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="One lookbook addition"
+                                android:textColor="#ACACAC"
+                                android:textSize="17dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_add_equal1"
+                            android:layout_width="10.67dp"
+                            android:layout_height="7.00dp"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0.1" >
+
+                             <ImageView
+                                android:id="@+id/img_equal1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/equal_point" /> 
+                                
+                               
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_point"
+                            android:layout_width="34.67dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1.5" >
+
+                            <TextView
+                                android:id="@+id/txt_200"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="250"
+                                android:textColor="#27B3AD"
+                                android:textSize="20.67dp" />
+
+                            <TextView
+                                android:id="@+id/txt_point1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_200"
+                                android:layout_centerHorizontal="true"
+                                android:layout_alignParentBottom="true"
+                                android:text="Points"
+                                android:layout_marginTop="8dp"
+                                android:textColor="#ACACAC"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- Relative layout Lookbook Like Point -->
+
+                <RelativeLayout
+                    android:id="@+id/rel_lookbook_like"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_lookbook_add"
+                    android:layout_marginTop="22dp" >
+
+                    <LinearLayout
+                        android:id="@+id/lin_like"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <RelativeLayout
+                            android:id="@+id/rel_like"
+                            android:layout_width="79.33dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.4" >
+
+                            <ImageView
+                                android:id="@+id/img_lookbook_like"
+                                android:layout_width="28.67dp"
+                                android:layout_height="28.67dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/review_addition" />
+
+                            <TextView
+                                android:id="@+id/txt_lookbook_like"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/img_lookbook_like"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="One review addition"
+                                android:textColor="#ACACAC"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_add_equal2"
+                            android:layout_width="10.67dp"
+                            android:layout_height="7.00dp"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="0.2" >
+
+                            <ImageView
+                                android:id="@+id/img_equal2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/equal_point" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_like_point"
+                            android:layout_width="34.67dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1.4" >
+
+                            <TextView
+                                android:id="@+id/txt_50"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="150"
+                                android:textColor="#27B3AD"
+                                android:textSize="20.67dp"/>
+
+                            <TextView
+                                android:id="@+id/txt_like_point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_50"
+                                android:layout_centerHorizontal="true"
+                                android:text="Points"
+                                android:textColor="#ACACAC"
+                                  android:layout_marginTop="8dp"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- Relative Layout Lookbook Review Point -->
+
+                <RelativeLayout
+                    android:id="@+id/rel_lookbook_review"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_lookbook_like"
+                    android:layout_marginTop="22dp" >
+
+                    <LinearLayout
+                        android:id="@+id/lin_review"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <RelativeLayout
+                            android:id="@+id/rel_review"
+                            android:layout_width="79.33dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5" >
+
+                            <ImageView
+                                android:id="@+id/img_lookbook_review"
+                                android:layout_width="28.67dp"
+                                android:layout_height="28.67dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/one_like" />
+
+                            <TextView
+                                android:id="@+id/txt_lookbook_review"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/img_lookbook_review"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="One like"
+                                android:textColor="#ACACAC"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_add_equal3"
+                            android:layout_width="10.67dp"
+                            android:layout_height="7.00dp"
+                            android:layout_gravity="top|center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:layout_weight="0.1" >
+
+                            <ImageView
+                                android:id="@+id/img_equal3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/equal_point" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rel_review_point"
+                            android:layout_width="34.67dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1.4" >
+
+                            <TextView
+                                android:id="@+id/txt_20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="10"
+                                android:textColor="#27B3AD"
+                                android:textSize="20.67dp" />
+
+                            <TextView
+                                android:id="@+id/txt_review_point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_20"
+                                android:layout_centerHorizontal="true"
+                                android:text="Points"
+                                 android:layout_marginTop="8dp"
+                                android:textColor="#ACACAC"
+                                android:textSize="18dp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_zak_coupons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel_point_main"
+                android:layout_marginTop="31.00dp"
+                android:gravity="center"
+                android:text="Earn Zakoopi points to become a leading fashionista in town and to earn some amazing goodies courtesy Zakoopi."
+                android:textColor="#4D4D49"
+                android:textSize="16dp" />
+            
+            <TextView 
+                android:id="@+id/txt_nxt_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_zak_coupons"
+                android:text="For more info contact us at info@zakoopi.com"
+                android:gravity="center"
+                 android:textColor="#4D4D49"
+                android:textSize="16dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_btn"
+                android:layout_width="207dp"
+                android:layout_height="43.67dp"
+                android:layout_below="@+id/txt_nxt_line"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/point_drawable" >
+
+                <TextView
+                    android:id="@+id/txt_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Get Started !"
+                    android:textColor="#27B3AD"
+                    android:textSize="22dp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/rel_btn" />
+        </RelativeLayout>
+     </LinearLayout>
+
+</ScrollView> 
+</RelativeLayout>

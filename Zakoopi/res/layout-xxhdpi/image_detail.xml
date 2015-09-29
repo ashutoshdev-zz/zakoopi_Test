@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000" >
+
+        <RelativeLayout
+            android:id="@+id/rel_next"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="#28B3AE" >
+
+            <TextView
+                android:id="@+id/txt_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="6.33dp"
+                android:layout_height="12.67dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/home_back" />
+
+            <TextView
+                android:id="@+id/txt_img_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/imageView11"
+                android:text="Image Detail"
+                android:textColor="#FFFFFF"
+                android:textSize="16.67dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5" >
+
+        <TextView
+            android:id="@+id/txt_picture_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Picture Description"
+            android:textColor="#4D4D49"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/edt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignLeft="@+id/txt_picture_description"
+            android:layout_below="@+id/txt_picture_description"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/imageView2"
+            android:background="@drawable/storename_box"
+            android:ems="10"
+            android:hint="Tell us what is special about your image. Use #hashtags to tag items, like #croptop, #saree, etc. Mininum 25 characters"
+            android:inputType="textMultiLine"
+            android:maxLength="250"
+            android:padding="5dp"
+            android:textColor="#898989"
+            android:textSize="12dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txt_picture_description"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nine_patch_icn" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2" >
+
+        <TextView
+            android:id="@+id/txt_store_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:text="Store Tags:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#4A4A48"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/autoCompleteTextView1"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/txt_store_tag"
+            android:layout_below="@+id/txt_store_tag"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/storename_box"
+            android:padding="5dp"
+            android:textColor="#F8F8F8"
+            android:textSize="12dp" />
+
+        <RelativeLayout
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/autoCompleteTextView1"
+            android:layout_below="@+id/autoCompleteTextView1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/error_msg_bg"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/txt_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Opps! seems like you forgot to tag a store..."
+                android:textColor="#4d4d49" />
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/grid_tag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/error"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:horizontalSpacing="5dp"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp" >
+        </GridView>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/autoCompleteTextView1"
+            android:layout_alignRight="@+id/autoCompleteTextView1"
+            android:layout_alignTop="@+id/autoCompleteTextView1"
+            android:gravity="center_vertical"
+            android:hint="Tag a store"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_add_another"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="53dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/add_button"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/txt_add_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Add another image"
+            android:textColor="#4D4E49"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="0.5"
+        android:background="#131313"
+        android:gravity="center" >
+
+        <com.image.effects.HorizontalListView
+            android:id="@+id/listview"
+            style="@style/TwoWayView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_photostream"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:choiceMode="singleChoice"
+            android:fillViewport="true"
+            android:gravity="center" >
+        </com.image.effects.HorizontalListView>
+
+        <TextView
+            android:id="@+id/txt_photostream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Photostream"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/meeee"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_upload_on" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_filter_on" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_tag_on" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/upload_title_off" />
+    </LinearLayout>
+
+</LinearLayout>

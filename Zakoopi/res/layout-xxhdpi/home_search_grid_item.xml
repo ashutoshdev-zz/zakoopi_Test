@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:feedpage="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res/com.zakoopi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="fill_parent"
+        android:layout_height="49.67dp" >
+
+        <com.zakoopi.roundimagelib.SelectableRoundedImageView
+            android:id="@+id/img_background"
+            android:layout_width="fill_parent"
+            android:layout_height="49.67dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="#000000"
+            app:sriv_left_bottom_corner_radius="5dp"
+            app:sriv_left_top_corner_radius="5dp"
+            app:sriv_right_bottom_corner_radius="5dp"
+            app:sriv_right_top_corner_radius="5dp" />
+
+        <TextView
+            android:id="@+id/txt_grid_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5.67dp"
+            android:layout_marginLeft="10.67dp"
+            android:layout_marginRight="10.67dp"
+            android:text="Hello"
+            android:textColor="#FFF"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
