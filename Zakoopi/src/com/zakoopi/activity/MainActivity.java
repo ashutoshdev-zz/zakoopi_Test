@@ -617,10 +617,7 @@ public class MainActivity extends FragmentActivity implements
 								home_search_area_db.allDelete();
 								//HomeSearchTopMarket.marketsTop.clear();
 								HomeSearchTopTrends.trendsTop.clear();
-								mypojolist.clear();
-								mycolorlist.clear();
-								mypojolist1.clear();
-								mycolorlist1.clear();
+								
 								PopularFeedFragment.statuscode="202";
 								
 							

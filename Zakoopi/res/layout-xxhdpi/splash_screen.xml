@@ -2,9 +2,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" 
-    android:background="@drawable/splash_screen">
+    android:background="@drawable/splash_screen" >
 
-    
+    <RelativeLayout
+        android:id="@+id/rel_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.8"
+        android:background="#000000"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/rel_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" >
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@drawable/custom_progress_background"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/progressBar1"
+                android:layout_alignTop="@+id/progressBar1"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/progressBar1"
+                android:gravity="center"
+                android:text="Processing..."
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_net"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Internet is slow"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+        
+        <TextView
+            android:id="@+id/txt_try"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="Retry"
+            android:textColor="#26B3AD"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+ </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

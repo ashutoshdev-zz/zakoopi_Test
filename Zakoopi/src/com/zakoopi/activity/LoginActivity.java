@@ -27,6 +27,7 @@ import android.provider.Settings;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -138,19 +139,13 @@ public class LoginActivity extends FragmentActivity implements
 		Intent i = getIntent();
 		data = i.getStringExtra("data");
 		
-		MainActivity.mycolorlist.clear();
-		MainActivity.mypojolist.clear();
-		MainActivity.mypage = 1;
-
-		MainActivity.mycolorlist1.clear();
-		MainActivity.mypojolist1.clear();
-		MainActivity.mypage1 = 1;
+		
 
 		pref_location = getSharedPreferences("location", 1);
 		 prefs_gcm = getSharedPreferences("GCM", 0);
 		 gcm_id = prefs_gcm.getString("REG_ID", "asgdj");
 		city_name = pref_location.getString("city", "123");
-		
+		Log.e("City_lo", city_name);
 		client = ClientHttp.getInstance(LoginActivity.this);
 		
 		// Initializing google plus api client
@@ -869,6 +864,7 @@ public class LoginActivity extends FragmentActivity implements
 				getAllData(data);
 			} else {
 			Intent main_activity = new Intent(LoginActivity.this,MainActivity.class);
+			main_activity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(main_activity);
 			finish();
 			}
@@ -1201,6 +1197,13 @@ public class LoginActivity extends FragmentActivity implements
 					"No Internet Connection",
 					"You don't have internet connection.", false);
 		}
+	}
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		moveTaskToBack(true);
 	}
 
 }

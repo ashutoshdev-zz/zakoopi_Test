@@ -210,6 +210,8 @@ public class UserFeedAdapter extends BaseAdapter {
 		/**
 		 * Typeface
 		 */
+try {
+	
 
 		typeface_semibold = Typeface.createFromAsset(ctx.getAssets(),
 				"fonts/SourceSansPro-Semibold.ttf");
@@ -219,6 +221,9 @@ public class UserFeedAdapter extends BaseAdapter {
 
 		typeface_regular = Typeface.createFromAsset(ctx.getAssets(),
 				"fonts/SourceSansPro-Regular.ttf");
+} catch (Exception e) {
+	// TODO: handle exception
+}
 
 	}
 

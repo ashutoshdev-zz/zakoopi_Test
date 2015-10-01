@@ -9,8 +9,9 @@
     <string name="stor_exp">Store &amp; Experiences</string> 
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="spinner_hint">All Products</string>
-    <string name="app_id">495011450611237</string> 
-    <!-- <string name="app_id">835732169845643</string> -->
+    <!--  <string name="app_id">495011450611237</string>   -->
+     <string name="app_id">835732169845643</string> 
+
     
      <string name="profile">Profile has been updated.</string>
     <string name="profile_pic">Your profile pic removed successfully.</string>

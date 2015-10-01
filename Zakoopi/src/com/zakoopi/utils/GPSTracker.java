@@ -1,10 +1,14 @@
 package com.zakoopi.utils;
 
+import com.zakoopi.activity.LoginActivity;
+
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -39,6 +43,8 @@ public class GPSTracker extends Service implements LocationListener {
 
 	// Declaring a Location Manager
 	protected LocationManager locationManager;
+	SharedPreferences  pref_location;
+	Editor editor_loc;
 
 	public GPSTracker(Context context) {
 		this.mContext = context;
@@ -152,7 +158,7 @@ public class GPSTracker extends Service implements LocationListener {
 	 * */
 	public void showSettingsAlert(){
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-   	 
+   	 alertDialog.setCancelable(false);
         // Setting Dialog Title
         alertDialog.setTitle("Zakoopi needs your city location");
  
@@ -173,6 +179,16 @@ public class GPSTracker extends Service implements LocationListener {
             public void onClick(DialogInterface dialog, int which) {
             	
             	//((Activity) mContext).finish();
+            	pref_location = mContext.getSharedPreferences("location", 1);
+    			editor_loc = pref_location.edit();
+    			
+            	editor_loc.putString("city", "Delhi");
+				editor_loc.commit();
+				Intent login_activity1 = new Intent(
+						mContext, LoginActivity.class);
+				login_activity1.putExtra("data", "no");
+				mContext.startActivity(login_activity1);
+				//finish();
             	
             dialog.cancel();
             }

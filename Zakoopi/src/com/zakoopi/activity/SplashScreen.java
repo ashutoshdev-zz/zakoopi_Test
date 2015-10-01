@@ -25,6 +25,7 @@ import android.location.Geocoder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.provider.Settings;
 import android.provider.Settings.Secure;
@@ -32,6 +33,7 @@ import android.support.v7.app.AlertDialog;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -88,7 +90,7 @@ public class SplashScreen extends Activity {
 	AsyncHttpClient client;
 	Typeface typeface_semibold, typeface_black, typeface_bold, typeface_light,
 			typeface_regular;
-	final static int DEFAULT_TIMEOUT = 40 * 1000;
+	final static int DEFAULT_TIMEOUT = 20 * 1000;
 	List<marketsSearch> markets = new ArrayList<marketsSearch>();
 	HomeSearchAllAreaDatabaseHandler home_search_area_db;
 	boolean bool = true;
@@ -120,6 +122,8 @@ public class SplashScreen extends Activity {
 	String userid, city_name;
 	String version;
 	String data = "no";
+	RelativeLayout rel_bt,rel_pro,rel_net;
+	TextView txt_try;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -130,28 +134,28 @@ public class SplashScreen extends Activity {
 
 		// creating connection detector class instance
 		cd = new ConnectionDetector(SplashScreen.this);
-		MainActivity.mycolorlist.clear();
-		MainActivity.mypojolist.clear();
-		MainActivity.mypage = 1;
+		
+		
 
-		MainActivity.mycolorlist1.clear();
-		MainActivity.mypojolist1.clear();
-		MainActivity.mypage1 = 1;
-
-		/**
-		 * Google Analystics
-		 */
-		Tracker t = ((UILApplication) getApplication())
-				.getTracker(TrackerName.APP_TRACKER);
-		t.setScreenName("Splash Screen");
-		t.send(new HitBuilders.AppViewBuilder().build());
-
+		rel_bt = (RelativeLayout) findViewById(R.id.rel_bt);
+		rel_pro = (RelativeLayout) findViewById(R.id.rel_pro);
+		rel_net = (RelativeLayout) findViewById(R.id.rel_net);
+		txt_try = (TextView) findViewById(R.id.txt_try);
+		
+		txt_try.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				reTry();
+			}
+		});
 		try {
 
 			home_search_product_db = new HomeSearchAllProductDatabaseHandler(
 					getApplicationContext());
 
-			ImageLoader.getInstance().clearMemoryCache();
+			
 
 			prefs = getSharedPreferences("PREF", MODE_PRIVATE);
 			prefs1 = getSharedPreferences("User_detail", 0);
@@ -180,7 +184,7 @@ public class SplashScreen extends Activity {
 					"fonts/SourceSansPro-Regular.ttf");
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 		ALL_PRODUCT_REST_URL = getString(R.string.base_url) + "offerings.json";
@@ -228,11 +232,11 @@ public class SplashScreen extends Activity {
                 if (gcm == null) {
                     gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
                     regid = gcm.register(SENDER_ID);
-
+Log.e("Rig", regid);
                     SharedPreferences.Editor edit = prefs_gcm.edit();
                     edit.putString("REG_ID", regid);
                     edit.commit();
-                    String gcm_id = prefs_gcm.getString("REG_ID", "asgdj");
+                    
                 }
 
                 return  regid;
@@ -273,27 +277,17 @@ public class SplashScreen extends Activity {
 					client = ClientHttp.getInstance(SplashScreen.this);
 					last_play();
 				} else {
+					
+					rel_bt.setVisibility(View.VISIBLE);
+					rel_pro.setVisibility(View.GONE);
+					rel_net.setVisibility(View.VISIBLE);
 				}
 
 			}
 		}
 	}
 
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
-		GoogleAnalytics.getInstance(SplashScreen.this)
-				.reportActivityStart(this);
-	}
-
-	@Override
-	protected void onStop() {
-		// TODO Auto-generated method stub
-		super.onStop();
-		GoogleAnalytics.getInstance(SplashScreen.this).reportActivityStop(this);
-	}
-
+	
 	@Override
 	protected void onResume() {
 
@@ -310,7 +304,6 @@ public class SplashScreen extends Activity {
 				  double latitude = gps.getLatitude(); 
 				  double longitude = gps.getLongitude();
 				
-
 				  
 				  /**
 				   * Mumbai Lat-LONG
@@ -324,7 +317,10 @@ public class SplashScreen extends Activity {
 					List<Address> addresses = geocoder.getFromLocation(
 							latitude, longitude, 1);
 					city = addresses.get(0).getLocality();
-					//Log.e("CITY", city);
+					CountDownTimer countDownTimer = new MyCountDownTimer(5*1000, 1000);
+					countDownTimer.start();
+					
+					Log.e("CITY", city);
 					if (city.contains("Mumbai")) {
 						editor_loc.putString("city", "Mumbai");
 						editor_loc.commit();
@@ -335,7 +331,9 @@ public class SplashScreen extends Activity {
 						editor_loc.commit();
 
 					}
-
+					rel_bt.setVisibility(View.VISIBLE);
+					rel_pro.setVisibility(View.VISIBLE);
+					rel_net.setVisibility(View.GONE);
 					onNewIntent(getIntent());
 
 				} catch (Exception e) {
@@ -343,14 +341,18 @@ public class SplashScreen extends Activity {
 				}
 
 			} else {
-			//	Log.e("CITY", "LOG_GPS1");
+			Log.e("CITY", "LOG_GPS1");
 				city_name = pref_location.getString("city", "123");
 
 				if (city_name.equals("123")) {
-					gps.showSettingsAlert();
+					rel_bt.setVisibility(View.GONE);
+					
+					showSettingsAlert();
 
 				} else {
-
+					rel_bt.setVisibility(View.VISIBLE);
+					rel_pro.setVisibility(View.VISIBLE);
+					rel_net.setVisibility(View.GONE);
 					onNewIntent(getIntent());
 
 				}
@@ -413,7 +415,9 @@ public class SplashScreen extends Activity {
 			@Override
 			public void onFailure(int arg0, Header[] arg1, byte[] arg2,
 					Throwable arg3) {
-
+				 rel_bt.setVisibility(View.VISIBLE);
+					rel_pro.setVisibility(View.GONE);
+					rel_net.setVisibility(View.VISIBLE);
 				// Log.e("FAIL", "FAIL");
 			}
 		});
@@ -516,6 +520,9 @@ public class SplashScreen extends Activity {
 			@Override
 			public void onFailure(int statusCode, Header[] headers,
 					byte[] errorResponse, Throwable e) {
+				 rel_bt.setVisibility(View.VISIBLE);
+					rel_pro.setVisibility(View.GONE);
+					rel_net.setVisibility(View.VISIBLE);
 			}
 
 			@Override
@@ -664,7 +671,7 @@ public class SplashScreen extends Activity {
 							all_play(text);
 							 //Log.e("sUCCESS", text);
 						} catch (Exception e) {
-
+							e.printStackTrace();
 						}
 
 					}
@@ -673,7 +680,10 @@ public class SplashScreen extends Activity {
 					public void onFailure(int arg0, Header[] arg1, byte[] arg2,
 							Throwable arg3) {
 
-						 //Log.e("FAIL", "FAIL" + arg0);
+						 Log.e("FAIL", "FAIL" + arg0);
+						 rel_bt.setVisibility(View.VISIBLE);
+							rel_pro.setVisibility(View.GONE);
+							rel_net.setVisibility(View.VISIBLE);
 					}
 				});
 	}
@@ -988,5 +998,77 @@ public class SplashScreen extends Activity {
 			showAlertDialog(SplashScreen.this, "No Internet Connection",
 					"You don't have internet connection.", false);
 		}
+	}
+	
+	
+	public void reTry() {
+		 rel_bt.setVisibility(View.VISIBLE);
+			rel_pro.setVisibility(View.VISIBLE);
+			rel_net.setVisibility(View.GONE);
+		client = ClientHttp.getInstance(SplashScreen.this);
+		last_play();
+		
+	}
+	
+	public class MyCountDownTimer extends CountDownTimer {
+		public MyCountDownTimer(long startTime, long interval) {
+			super(startTime, interval);
+		}
+
+		@Override
+		public void onFinish() {
+
+		}
+
+		@Override
+		public void onTick(long millisUntilFinished) {
+			Log.e("TIME", ""+millisUntilFinished/1000);
+		}
+	}
+	
+	/**
+	 * Function to show settings alert dialog
+	 * On pressing Settings button will lauch Settings Options
+	 * */
+	public void showSettingsAlert(){
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(SplashScreen.this);
+   	 alertDialog.setCancelable(false);
+        // Setting Dialog Title
+        alertDialog.setTitle("Zakoopi needs your city location");
+ 
+        // Setting Dialog Message
+        alertDialog.setMessage("Please Enable location.");
+ 
+        // On pressing Settings button
+        alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int which) {
+            	Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            	startActivity(intent);
+            	 dialog.cancel();
+            }
+        });
+ 
+        // on pressing cancel button
+        alertDialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            	
+            	//((Activity) mContext).finish();
+            	/*pref_location = mContext.getSharedPreferences("location", 1);
+    			editor_loc = pref_location.edit();
+    			*/
+            	editor_loc.putString("city", "Delhi");
+				editor_loc.commit();
+				Intent login_activity1 = new Intent(
+						SplashScreen.this, LoginActivity.class);
+				login_activity1.putExtra("data", "no");
+				startActivity(login_activity1);
+				finish();
+            	
+            dialog.cancel();
+            }
+        });
+ 
+        // Showing Alert Message
+        alertDialog.show();
 	}
 }

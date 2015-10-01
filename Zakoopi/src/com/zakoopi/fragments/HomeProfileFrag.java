@@ -214,6 +214,7 @@ public class HomeProfileFrag extends Fragment {
 		typeface_regular = Typeface.createFromAsset(getActivity().getAssets(),
 				"fonts/SourceSansPro-Regular.ttf");
 
+		Log.e("HOME", "Profile");
 		findId(view);
 
 		View profile_header = inflater
@@ -395,7 +396,7 @@ public class HomeProfileFrag extends Fragment {
 					.placeholder(R.drawable.profile_img_3).resize(67, 67)
 					.into(img_profile);
 
-			// Log.e("ON1", "ON1");
+			 Log.e("ON1", "ON1");
 
 			if (!MainActivity.age.equals("") && !MainActivity.loc.equals("")
 					&& !MainActivity.gender.equals("")) {
@@ -531,7 +532,7 @@ public class HomeProfileFrag extends Fragment {
 			Picasso.with(getActivity()).load(pro_user_pic_url)
 					.placeholder(R.drawable.profile_img_3).resize(67, 67)
 					.into(img_profile);
-			// Log.e("ON2", "ON2");
+			 Log.e("ON2", "ON2");
 			checkInternetConnection();
 		}
 
@@ -544,9 +545,9 @@ public class HomeProfileFrag extends Fragment {
 	}
 
 	private void checkInternetConnection() {
-
+br = null;
 		if (br == null) {
-
+Log.e("BR", "BR");
 			br = new BroadcastReceiver() {
 
 				@Override
@@ -603,6 +604,8 @@ public class HomeProfileFrag extends Fragment {
 			getActivity()
 					.registerReceiver((BroadcastReceiver) br, intentFilter);
 
+		} else {
+			Log.e("BR1", "BR1");
 		}
 	}
 
@@ -1458,7 +1461,7 @@ public class HomeProfileFrag extends Fragment {
 
 		USER_INFO_REST_URL = getString(R.string.base_url) + "users/view/"
 				+ user_id + ".json";
-		//Log.e("MY PRO", USER_INFO_REST_URL);
+		Log.e("MY PRO", USER_INFO_REST_URL);
 		client.setBasicAuth(user_email, user_password);
 		client.getHttpClient().getParams()
 				.setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
@@ -2870,6 +2873,9 @@ public class HomeProfileFrag extends Fragment {
 		@Override
 		protected void onPostExecute(Void param) {
 
+			try {
+				
+			
 			adapter = new UserFeedAdapter(getActivity(), feedPojo, colorlist,
 					pro_user_name, pro_user_pic_url);
 			endlessListView.setAdapter(adapter);
@@ -2878,6 +2884,9 @@ public class HomeProfileFrag extends Fragment {
 			progressBar1.setVisibility(View.GONE);
 			// diaog.dismiss();
 			endlessListView.setVisibility(View.VISIBLE);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 
 		}
 
